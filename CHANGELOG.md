@@ -1,4 +1,14 @@
 # 2014-10-06
+5 commits against 2 issues, over 10 days [`b678195`](https://github.com/ucsf-ckm/amalgamatic-libguides/commit/b678195)⎆[`21fe6e8`](https://github.com/ucsf-ckm/amalgamatic-libguides/commit/21fe6e8)
+
+## [**3.0.0**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues?milestone=2&state=closed)
+- [**#8**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/8) first parameter of callback should be error object, fixes #4
+- [**#4**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/4) first parameter should be error object
+
+---
+
+
+# 2014-10-06
 4 commits against 2 issues, over 14 days [`a044615`](https://github.com/ucsf-ckm/amalgamatic-libguides/commit/a044615)⎆[`50a1c75`](https://github.com/ucsf-ckm/amalgamatic-libguides/commit/50a1c75)
 
 ## [**3.0.1**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues?milestone=3&state=closed)
