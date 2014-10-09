@@ -38,7 +38,7 @@ describe('exports', function () {
 	it('returns results if a non-ridiculous search term is provided', function (done) {
 		nock('https://lgapi.libapps.com')
 			.get('/widgets.php?site_id=407&widget_type=1&search_match=2&search_type=0&sort_by=count_hit&list_format=1&output_format=1&load_type=2&enable_description=0&enable_group_search_limit=0&enable_subject_search_limit=0&widget_embed_type=2&config_id=1410964327647&search_terms=medicine')
-			.reply('200', '<ul><li><a href="http://example.com/1" target="_blank">Medicine</a></li><div class="s-lg-guide-list-info"></div><li><a href="http://example.com/2" target="_blank">Medicine2</a></li><div class="s-lg-guide-list-info"></div></ul>');
+			.reply(200, '<ul><li><a href="http://example.com/1" target="_blank">Medicine</a></li><div class="s-lg-guide-list-info"></div><li><a href="http://example.com/2" target="_blank">Medicine2</a></li><div class="s-lg-guide-list-info"></div></ul>');
 
 		libguides.search({searchTerm: 'medicine'}, function (err, result) {
 			expect(err).to.be.not.ok;
@@ -50,7 +50,7 @@ describe('exports', function () {
 	it('returns an empty result if ridiculous search term is provided', function (done) {
 		nock('https://lgapi.libapps.com')
 			.get('/widgets.php?site_id=407&widget_type=1&search_match=2&search_type=0&sort_by=count_hit&list_format=1&output_format=1&load_type=2&enable_description=0&enable_group_search_limit=0&enable_subject_search_limit=0&widget_embed_type=2&config_id=1410964327647&search_terms=fhqwhgads')
-			.reply('200', '<div class="s-lg-guide-list-info"><i>No results match the request.</i></div>');
+			.reply(200, '<div class="s-lg-guide-list-info"><i>No results match the request.</i></div>');
 
 		libguides.search({searchTerm: 'fhqwhgads'}, function (err, result) {
 			expect(err).to.be.not.ok;
@@ -68,4 +68,30 @@ describe('exports', function () {
 			done();
 		});
 	});
+
+	it('should allow a URL option', function (done) {
+		nock('https://example.com')
+			.get('/path?site_id=0&search_terms=medicine')
+			.reply(200, '<ul><li><a href="http://example.com/1" target="_blank">Medicine</a></li><div class="s-lg-guide-list-info"></div></ul>');
+
+		libguides.setOptions({url: 'https://example.com/path?site_id=0'});
+		libguides.search({searchTerm: 'medicine'}, function (err, result) {
+			expect(err).to.be.not.ok;
+			expect(result.data).to.deep.equal([{name: 'Medicine', url: 'http://example.com/1'}]);
+			done();
+		});
+	});
+
+	// it('should return a link to all results', function (done) {
+	// 	nock('https://example.com')
+	// 		.get('/path?site_id=0&search_terms=medicine')
+	// 		.reply(200, '<ul><li><a href="http://example.com/1" target="_blank">Medicine</a></li><div class="s-lg-guide-list-info"></div></ul>');
+
+	// 	libguides.setOptions({url: 'https://example.com/path?site_id=0'});
+	// 	libguides.search({searchTerm: 'medicine'}, function (err, result) {
+	// 		expect(err).to.be.not.ok;
+	// 		expect(result.url).to.equal('https://example.com/widgets.php?site_id=407&widget_type=1&search_match=2&search_type=0&sort_by=count_hit&list_format=1&output_format=1&load_type=2&enable_description=0&enable_group_search_limit=0&enable_subject_search_limit=0&widget_embed_type=2&config_id=1410964327647&search_terms=medicine');
+	// 		done();
+	// 	});
+	// });
 });
