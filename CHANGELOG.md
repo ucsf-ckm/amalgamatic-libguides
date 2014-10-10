@@ -1,3 +1,18 @@
+# 2014-10-10
+6 commits against 4 issues, over 4 days [`3325a13`](https://github.com/ucsf-ckm/amalgamatic-libguides/commit/3325a13)⎆[`d8bd682`](https://github.com/ucsf-ckm/amalgamatic-libguides/commit/d8bd682)
+
+## [**4.0.0**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues?milestone=4&state=closed)
+- [**#11**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/11) include link to results page, closes #9
+- [**#9**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/9) &quot;All Results&quot; link
+- [**#3**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/3) enable configuration options
+
+
+## Issues
+- [**#10**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/10) add setOptions(), closes #3
+
+---
+
+
 # 2014-10-06
 5 commits against 2 issues, over 10 days [`b678195`](https://github.com/ucsf-ckm/amalgamatic-libguides/commit/b678195)⎆[`21fe6e8`](https://github.com/ucsf-ckm/amalgamatic-libguides/commit/21fe6e8)
 
