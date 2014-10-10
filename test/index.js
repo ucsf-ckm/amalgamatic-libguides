@@ -82,16 +82,16 @@ describe('exports', function () {
 		});
 	});
 
-	// it('should return a link to all results', function (done) {
-	// 	nock('https://example.com')
-	// 		.get('/path?site_id=0&search_terms=medicine')
-	// 		.reply(200, '<ul><li><a href="http://example.com/1" target="_blank">Medicine</a></li><div class="s-lg-guide-list-info"></div></ul>');
+	it('should return a link to all results', function (done) {
+		nock('https://example.com')
+			.get('/path?site_id=0&search_terms=medicine')
+			.reply(200, '<ul><li><a href="http://example.com/1" target="_blank">Medicine</a></li><div class="s-lg-guide-list-info"></div></ul>');
 
-	// 	libguides.setOptions({url: 'https://example.com/path?site_id=0'});
-	// 	libguides.search({searchTerm: 'medicine'}, function (err, result) {
-	// 		expect(err).to.be.not.ok;
-	// 		expect(result.url).to.equal('https://example.com/widgets.php?site_id=407&widget_type=1&search_match=2&search_type=0&sort_by=count_hit&list_format=1&output_format=1&load_type=2&enable_description=0&enable_group_search_limit=0&enable_subject_search_limit=0&widget_embed_type=2&config_id=1410964327647&search_terms=medicine');
-	// 		done();
-	// 	});
-	// });
+		libguides.setOptions({url: 'https://example.com/path?site_id=0'});
+		libguides.search({searchTerm: 'medicine'}, function (err, result) {
+			expect(err).to.be.not.ok;
+			expect(result.url).to.equal('https://example.com/path?site_id=0&search_terms=medicine');
+			done();
+		});
+	});
 });
