@@ -82,15 +82,15 @@ describe('exports', function () {
 		});
 	});
 
-	it('should return a link to all results', function (done) {
+	it('should return a link to all results if searchUrl option is set', function (done) {
 		nock('https://example.com')
 			.get('/path?site_id=0&search_terms=medicine')
 			.reply(200, '<ul><li><a href="http://example.com/1" target="_blank">Medicine</a></li><div class="s-lg-guide-list-info"></div></ul>');
 
-		libguides.setOptions({url: 'https://example.com/path?site_id=0'});
+		libguides.setOptions({url: 'https://example.com/path?site_id=0', searchUrl: 'http://guides.ucsf.edu/srch.php'});
 		libguides.search({searchTerm: 'medicine'}, function (err, result) {
 			expect(err).to.be.not.ok;
-			expect(result.url).to.equal('https://example.com/path?site_id=0&search_terms=medicine');
+			expect(result.url).to.equal('http://guides.ucsf.edu/srch.php?q=medicine');
 			done();
 		});
 	});

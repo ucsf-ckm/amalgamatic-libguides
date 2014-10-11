@@ -41,7 +41,11 @@ exports.search = function (query, callback) {
                 });
             });
             
-            callback(null, {data: result, url: myUrl});
+            var rv = {data: result};
+            if (options.searchUrl) {
+                rv.url = options.searchUrl + '?' + querystring.stringify({q: query.searchTerm});
+            }
+            callback(null, rv);
         });
     }).on('error', function (e) {
         callback(e);
