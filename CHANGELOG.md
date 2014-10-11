@@ -1,3 +1,12 @@
+# 2014-10-11
+3 commits against 1 issues, over a day [`f2a80a3`](https://github.com/ucsf-ckm/amalgamatic-libguides/commit/f2a80a3)⎆[`7316403`](https://github.com/ucsf-ckm/amalgamatic-libguides/commit/7316403)
+
+## [**4.0.1**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues?milestone=5&state=closed)
+- [**#12**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/12) Don&#39;t use widget URL for all search results page
+
+---
+
+
 # 2014-10-10
 6 commits against 4 issues, over 4 days [`3325a13`](https://github.com/ucsf-ckm/amalgamatic-libguides/commit/3325a13)⎆[`d8bd682`](https://github.com/ucsf-ckm/amalgamatic-libguides/commit/d8bd682)
 
