@@ -4,6 +4,7 @@ var querystring = require('querystring');
 var cheerio = require('cheerio');
 var extend = require('util-extend');
 var phantom = require('phantom');
+var url = require('url');
 
 var options = {
     url: 'http://guides.ucsf.edu/srch.php'};
@@ -48,7 +49,7 @@ exports.search = function (query, callback) {
                                 rawResults.each(function () {
                                     result.push({
                                         name: $(this).text(),
-                                        url: $(this).attr('href')
+                                        url: url.resolve(myUrl, $(this).attr('href'))
                                     });
                                 });                        
                             }
