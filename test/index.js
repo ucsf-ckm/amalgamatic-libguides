@@ -72,4 +72,19 @@ describe('exports', function () {
 			done();
 		});
 	});
+
+	it('should expend URL to include a hostname', function (done) {
+		var myUrl = 'file://' + path.resolve(__dirname, 'fixtures/medicine.html');
+		libguides.setOptions({url: myUrl});
+
+		libguides.search({searchTerm: 'medicine'}, function (err, result) {
+			var urlRegExp = /^file:\/\//;
+
+			expect(err).to.be.not.ok;
+			result.data.forEach(function (elem) {
+				expect(urlRegExp.test(elem.url)).to.be.ok;
+			});
+			done();
+		});
+	});
 });
