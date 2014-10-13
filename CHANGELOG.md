@@ -1,4 +1,7 @@
 
+## [**4.0.4**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues?milestone=8&state=closed)
+- [**#18**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/18) include phantomjs requirement, closes #17
+
 ## [**4.0.3**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues?milestone=7&state=closed)
 - [**#15**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/15) network path reference for URLs
 
