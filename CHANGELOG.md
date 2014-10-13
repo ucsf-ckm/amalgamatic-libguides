@@ -1,4 +1,7 @@
 
+## [**4.0.5**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues?milestone=9&state=closed)
+- [**#19**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/19) phantom should be installed elsewhere
+
 ## [**4.0.4**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues?milestone=8&state=closed)
 - [**#18**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/18) include phantomjs requirement, closes #17
 
