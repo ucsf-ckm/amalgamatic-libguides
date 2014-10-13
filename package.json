@@ -9,7 +9,6 @@
   "dependencies": {
     "cheerio": "^0.17.0",
     "phantom": "^0.6.5",
-    "phantomjs": "^1.9.10",
     "util-extend": "^1.0.1"
   },
   "scripts": {
