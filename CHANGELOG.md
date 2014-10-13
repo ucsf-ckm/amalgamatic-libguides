@@ -1,4 +1,7 @@
 
+## [**4.0.3**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues?milestone=7&state=closed)
+- [**#15**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/15) network path reference for URLs
+
 ## [**4.0.2**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues?milestone=6&state=closed)
 - [**#14**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/14) use PhantomJS to execute JS in LibGuides search page because API results don&#39;t match search page, closes #13
 - [**#13**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/13) use LibGuides search page rather than widget &quot;API&quot; non-API
