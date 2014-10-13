@@ -1,11 +1,12 @@
+/* global document */
+
 var querystring = require('querystring');
 var cheerio = require('cheerio');
-var https = require('https');
 var extend = require('util-extend');
+var phantom = require('phantom');
 
 var options = {
-    url: 'https://lgapi.libapps.com/widgets.php?site_id=407&widget_type=1&search_match=2&search_type=0&sort_by=count_hit&list_format=1&output_format=1&load_type=2&enable_description=0&enable_group_search_limit=0&enable_subject_search_limit=0&widget_embed_type=2&config_id=1410964327647'
-};
+    url: 'http://guides.ucsf.edu/srch.php'};
 
 exports.setOptions = function (newOptions) {
     options = extend(options, newOptions);
@@ -19,35 +20,49 @@ exports.search = function (query, callback) {
         return;
     }
 
-    var myUrl = options.url + '&' + querystring.stringify({search_terms: query.searchTerm});
+    var myUrl = options.url + '?' + querystring.stringify({q: query.searchTerm});
 
-    https.get(myUrl, function (res) {
-        var rawData = '';
+    var err, rv;
 
-        res.on('data', function (chunk) {
-            rawData += chunk;
-        });
+    // LibGuides API results do not match search page results.
+    // Search page uses JavaScript to show results.
+    // So, let's use a headless browser...
 
-        res.on('end', function () {
-            var $ = cheerio.load(rawData);
-            var result = [];
+    phantom.create(function (ph) {
+        ph.createPage(function (page) {
+            page.open(myUrl, function (status) {
+                if (status === 'success') {
+                    page.evaluate(
+                        function () {
+                            var el = document.getElementById('s-lg-srch-list');
+                            return el && el.innerHTML;
+                        },
+                        function (rawHtml) {
+                            var result = [];
 
-            var rawResults = $('ul li a');
-            
-            rawResults.each(function () {
-                result.push({
-                    name: $(this).text(),
-                    url: $(this).attr('href')
-                });
+                            if (rawHtml) {
+                                var $ = cheerio.load(rawHtml);
+
+                                var rawResults = $('.s-lg-srch-listing-t a');
+                    
+                                rawResults.each(function () {
+                                    result.push({
+                                        name: $(this).text(),
+                                        url: $(this).attr('href')
+                                    });
+                                });                        
+                            }
+                            
+                            rv = {data: result, url: myUrl};
+                            callback(null, rv);
+                            ph.exit();
+                        }
+                    );
+                } else {
+                    err = new Error('page load failed: ' + myUrl);
+                    callback(err);
+                }
             });
-            
-            var rv = {data: result};
-            if (options.searchUrl) {
-                rv.url = options.searchUrl + '?' + querystring.stringify({q: query.searchTerm});
-            }
-            callback(null, rv);
         });
-    }).on('error', function (e) {
-        callback(e);
     });
 };

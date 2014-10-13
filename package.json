@@ -8,18 +8,18 @@
   "version": "4.0.1",
   "dependencies": {
     "cheerio": "^0.17.0",
+    "phantom": "^0.6.5",
     "util-extend": "^1.0.1"
   },
   "scripts": {
-    "test": "node_modules/lab/bin/lab -t 100"
+    "test": "node_modules/lab/bin/lab -t"
   },
   "engines": {
     "node": "0.10.x"
   },
   "devDependencies": {
     "jshint": "^2.5.5",
-    "lab": "^4.4.4",
-    "nock": "^0.47.0",
+    "lab": "^4.6.2",
     "precommit-hook": "^1.0.7"
   },
   "keywords": [
