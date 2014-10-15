@@ -1,4 +1,8 @@
 
+## [**4.0.6**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues?milestone=10&state=closed)
+- [**#5**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/5) Travis-CI
+- [**#2**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/2) Document usage
+
 ## [**4.0.5**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues?milestone=9&state=closed)
 - [**#19**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/19) phantom should be installed elsewhere
 
