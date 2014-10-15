@@ -62,7 +62,7 @@ describe('exports', function () {
 		});
 	});
 
-	it('should return a link to all results if searchUrl option is set', function (done) {
+	it('should return a link to all results', function (done) {
 		var myUrl = 'file://' + path.resolve(__dirname, 'fixtures/medicine.html');
 		libguides.setOptions({url: myUrl});
 
@@ -73,7 +73,7 @@ describe('exports', function () {
 		});
 	});
 
-	it('should expend URL to include a hostname', function (done) {
+	it('should expand URL to include a hostname', function (done) {
 		var myUrl = 'file://' + path.resolve(__dirname, 'fixtures/medicine.html');
 		libguides.setOptions({url: myUrl});
 
