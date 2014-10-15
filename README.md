@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ucsf-ckm/amalgamatic-libguides.svg?branch=master)](https://travis-ci.org/ucsf-ckm/amalgamatic-libguides)
+
 amalgamatic-libguides
 =====================
 
