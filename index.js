@@ -35,8 +35,10 @@ exports.search = function (query, callback) {
                 if (status === 'success') {
                     page.evaluate(
                         function () {
+                            // $lab:coverage:off$
                             var el = document.getElementById('s-lg-srch-list');
                             return el && el.innerHTML;
+                            // $lab:coverage:on$
                         },
                         function (rawHtml) {
                             var result = [];
