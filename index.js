@@ -23,6 +23,9 @@ exports.search = function (query, callback) {
     }
 
     var myUrl = options.url + '?' + querystring.stringify({q: query.searchTerm});
+    if (options.urlParameters) {
+        myUrl += '&' + querystring.stringify(options.urlParameters);
+    }
 
     var err, rv;
 
