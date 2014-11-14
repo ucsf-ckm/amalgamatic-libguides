@@ -7,7 +7,8 @@ var phantom = require('phantom');
 var url = require('url');
 
 var options = {
-    url: 'http://guides.ucsf.edu/srch.php'};
+    url: 'http://guides.ucsf.edu/srch.php'
+};
 
 exports.setOptions = function (newOptions) {
     options = extend(options, newOptions);
