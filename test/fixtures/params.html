@@ -1,8 +1,13 @@
 <!doctype html>
-<title>medicine</title>
+<title>params</title>
 <meta charset="utf-8">
 <script>
 	window.onload = function () {
+		if (window.location.search !== '?q=params&comeOn=fhqwhgads') {
+			// parameters were not set properly. respond with something that will cause an error
+			window.location = '404\'ed!';
+			return;
+		}
 		document.getElementById('body').innerHTML = '<!-- BEGIN: Content Header -->' +
 '        <div id="s-lib-public-header" class="s-lib-header container s-lib-side-borders">' +
 '            <div id="s-lib-bc">' +

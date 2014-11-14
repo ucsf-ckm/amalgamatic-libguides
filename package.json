@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "jshint": "^2.5.5",
-    "lab": "^4.6.2",
+    "lab": "^4.7.0",
     "precommit-hook": "^1.0.7"
   },
   "keywords": [

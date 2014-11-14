@@ -87,4 +87,15 @@ describe('exports', function () {
 			done();
 		});
 	});
+
+	it('should allow us to send it extra url parameters', function (done) {
+		var myUrl = 'file://' + path.resolve(__dirname, 'fixtures/params.html');
+		var myParams = {comeOn: 'fhqwhgads'};
+
+		libguides.setOptions({url: myUrl, urlParameters: myParams});
+		libguides.search({searchTerm: 'params'}, function (err, result) {
+			expect(result.data.length).to.equal(10);
+			done();
+		});
+	});
 });
