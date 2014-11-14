@@ -20,6 +20,9 @@ var amalgamatic = require('amalgamatic'),
 // Set the URL to point to your LibGuides search page
 libguides.setOptions({url: 'http://guides.ucsf.edu/srch.php'});
 
+// If there are additional URL parameters you want to specify, use the urlParameters option:
+//    libguides.setOptions({urlParameters: {foo: 'bar', boo: 'baz'}};
+
 // Add this plugin to your Amalgamatic instance along with any other plugins you've configured.
 amalgamatic.add('libguides', libguides);
 
