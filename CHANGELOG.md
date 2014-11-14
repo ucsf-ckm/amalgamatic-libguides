@@ -1,4 +1,9 @@
 
+## [**4.1.0**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues?milestone=11&state=closed)
+- [**#25**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/25) allow specification of parameters for faceting, fixes #24
+- [**#24**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/24) feature: allow specification of URL parameters to allow faceting
+- [**#22**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/22) test coverage
+
 ## [**4.0.6**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues?milestone=10&state=closed)
 - [**#5**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/5) Travis-CI
 - [**#2**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/2) Document usage
