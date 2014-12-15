@@ -1,4 +1,8 @@
 
+## [**4.1.1**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues?milestone=12&state=closed)
+- [**#27**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/27) update phantom module, closes #26
+- [**#26**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/26) timeout for phantomjs
+
 ## [**4.1.0**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues?milestone=11&state=closed)
 - [**#25**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/25) allow specification of parameters for faceting, fixes #24
 - [**#24**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/24) feature: allow specification of URL parameters to allow faceting
