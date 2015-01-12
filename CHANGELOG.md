@@ -1,4 +1,7 @@
 
+## [**4.1.2**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues?milestone=13&state=closed)
+- [**#28**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/28) update phantom to 0.7.2
+
 ## [**4.1.1**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues?milestone=12&state=closed)
 - [**#27**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/27) update phantom module, closes #26
 - [**#26**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/26) timeout for phantomjs
