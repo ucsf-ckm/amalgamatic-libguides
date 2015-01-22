@@ -45,6 +45,8 @@ exports.search = function (query, callback) {
                             // $lab:coverage:on$
                         },
                         function (rawHtml) {
+                            ph.exit();
+
                             var result = [];
 
                             if (rawHtml) {
@@ -62,7 +64,6 @@ exports.search = function (query, callback) {
                             
                             rv = {data: result, url: myUrl};
                             callback(null, rv);
-                            ph.exit();
                         }
                     );
                 } else {
