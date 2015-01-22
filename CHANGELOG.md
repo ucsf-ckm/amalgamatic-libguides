@@ -1,4 +1,7 @@
 
+## [**4.1.3**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues?milestone=14&state=closed)
+- [**#30**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/30) exit phantom as quickly as possible
+
 ## [**4.1.2**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues?milestone=13&state=closed)
 - [**#28**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/28) update phantom to 0.7.2
 
