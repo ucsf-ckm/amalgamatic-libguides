@@ -1,4 +1,7 @@
 
+## [**4.1.4**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues?milestone=15&state=closed)
+- [**#29**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/29) phantom does not always exit
+
 ## [**4.1.3**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues?milestone=14&state=closed)
 - [**#30**](https://github.com/ucsf-ckm/amalgamatic-libguides/issues/30) exit phantom as quickly as possible
 
