@@ -67,6 +67,7 @@ exports.search = function (query, callback) {
                         }
                     );
                 } else {
+                    ph.exit();
                     err = new Error('page load failed: ' + myUrl);
                     callback(err);
                 }
