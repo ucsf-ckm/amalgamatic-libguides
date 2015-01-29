@@ -45,6 +45,8 @@ exports.search = function (query, callback) {
                             // $lab:coverage:on$
                         },
                         function (rawHtml) {
+                            ph.process.stdin.pause();
+                            ph.process.stdout.pause();
                             ph.exit();
 
                             var result = [];
@@ -67,6 +69,8 @@ exports.search = function (query, callback) {
                         }
                     );
                 } else {
+                    ph.process.stdin.pause();
+                    ph.process.stdout.pause();
                     ph.exit();
                     err = new Error('page load failed: ' + myUrl);
                     callback(err);
