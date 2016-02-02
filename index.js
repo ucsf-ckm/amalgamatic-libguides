@@ -33,7 +33,7 @@ exports.search = function (query, callback) {
     // Search page uses JavaScript to show results.
     // So, let's use a headless browser...
 
-    phantom.create(options, function (ph) {
+    phantom.create(function (ph) {
         ph.createPage(function (page) {
             page.open(myUrl, function (status) {
                 if (status === 'success') {
