@@ -7,7 +7,7 @@ var path = require('path');
 var Lab = require('lab');
 var lab = exports.lab = Lab.script();
 
-var expect = Lab.expect;
+var expect = require('code').expect;
 var describe = lab.experiment;
 var it = lab.test;
 
