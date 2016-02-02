@@ -10,8 +10,27 @@ var lab = exports.lab = Lab.script();
 var expect = require('code').expect;
 var describe = lab.experiment;
 var it = lab.test;
+var after = lab.after;
+
+// Set up web server for PhantomJS to interact with
+var liveServer = require('live-server');
+liveServer.start({
+    root: path.resolve(__dirname, 'fixtures'),
+    open: false
+});
 
 describe('exports', function () {
+
+	after(function (done) {
+		// delete variables leaked by live-server (only used for testing)
+		delete global.numberOfOpenProcesses;
+		delete global.waitingToOpenProcessDelay;
+		delete global.maxNumberOfOpenProcesses;
+		delete global.maxNumberOfOpenFiles;
+		delete global.waitingToOpenFileDelay;
+		delete global.numberOfOpenFiles;
+		done();
+	});
 
 	it('returns an empty result if no search term provided', function (done) {
 		libguides.search({searchTerm: ''}, function (err, result) {
@@ -30,7 +49,7 @@ describe('exports', function () {
 	});
 
 	it('returns results if a non-ridiculous search term is provided', function (done) {
-		var myUrl = 'file://' + path.resolve(__dirname, 'fixtures/medicine.html');
+		var myUrl = 'http://0.0.0.0:8080/medicine.html';
 		libguides.setOptions({url: myUrl});
 
 		libguides.search({searchTerm: 'medicine'}, function (err, result) {
