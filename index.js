@@ -29,11 +29,6 @@ exports.search = function (query, callback) {
 
     var err, rv;
 
-    // Disable security on travis tests.
-    /* $lab:coverage:off$ */
-    options = process.env.CI ? {'web-security': 'no'} : {};
-    /* $lab:coverage:on$ */
-
     // LibGuides API results do not match search page results.
     // Search page uses JavaScript to show results.
     // So, let's use a headless browser...
