@@ -35,7 +35,7 @@ exports.search = function (query, callback) {
 
     var phantomOptions = {
         parameters: {'web-security': 'no'},
-        binary: './node_modules/.bin/phantomjs'
+        binary: __dirname + '/node_modules/.bin/phantomjs'
     };
 
     phantom.create(phantomOptions, function (ph) {

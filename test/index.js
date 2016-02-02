@@ -60,7 +60,7 @@ describe('exports', function () {
 	});
 
 	it('returns an empty result if ridiculous search term is provided', function (done) {
-		var myUrl = 'file://' + path.resolve(__dirname, 'fixtures/fhqwhgads.html');
+		var myUrl = 'http://0.0.0.0:8080/fhqwhgads.html';
 		libguides.setOptions({url: myUrl});
 
 		libguides.search({searchTerm: 'fhqwhgads'}, function (err, result) {
@@ -70,8 +70,8 @@ describe('exports', function () {
 		});
 	});
 
-	it('returns an error object if there was an HTTP error', function (done) {
-		var myUrl = 'file://' + path.resolve(__dirname, 'fixtures/404.html');
+	it('returns an error object if PhantomJS returns failure', function (done) {
+		var myUrl = 'file:///404.html'; // this is a file that does not exist
 		libguides.setOptions({url: myUrl});
 
 		libguides.search({searchTerm: 'medicine'}, function (err, result) {
@@ -81,8 +81,22 @@ describe('exports', function () {
 		});
 	});
 
+	it('returns an empty object if there was an HTTP error', function (done) {
+		var myUrl = 'http://0.0.0.0:8080/404.html'; // URL does not exist, returns 404
+		libguides.setOptions({url: myUrl});
+
+		libguides.search({searchTerm: 'medicine'}, function (err, result) {
+			expect(result).to.deep.equal({
+				data: [], 
+				url: 'http://0.0.0.0:8080/404.html?q=medicine'
+      		});
+			expect(err).to.be.null(); // alas, this is not actually ideal
+			done();
+		});
+	});
+
 	it('should return a link to all results', function (done) {
-		var myUrl = 'file://' + path.resolve(__dirname, 'fixtures/medicine.html');
+		var myUrl = 'http://0.0.0.0:8080//medicine.html';
 		libguides.setOptions({url: myUrl});
 
 		libguides.search({searchTerm: 'medicine'}, function (err, result) {
@@ -93,7 +107,7 @@ describe('exports', function () {
 	});
 
 	it('should expand URL to include a hostname', function (done) {
-		var myUrl = 'file://' + path.resolve(__dirname, 'fixtures/medicine.html');
+		var myUrl = 'http://0.0.0.0:8080//medicine.html';
 		libguides.setOptions({url: myUrl});
 
 		libguides.search({searchTerm: 'medicine'}, function (err, result) {
@@ -108,11 +122,23 @@ describe('exports', function () {
 	});
 
 	it('should allow us to send it extra url parameters', function (done) {
-		var myUrl = 'file://' + path.resolve(__dirname, 'fixtures/params.html');
+		var myUrl = 'http://0.0.0.0:8080/params.html';
 		var myParams = {comeOn: 'fhqwhgads'};
 
 		libguides.setOptions({url: myUrl, urlParameters: myParams});
 		libguides.search({searchTerm: 'params'}, function (err, result) {
+			expect(result.data.length).to.equal(10);
+			done();
+		});
+	});
+
+	it('should work from a different directory', function (done) {
+		process.chdir('..');
+		var myUrl = 'http://0.0.0.0:8080/medicine.html';
+		libguides.setOptions({url: myUrl});
+
+		libguides.search({searchTerm: 'medicine'}, function (err, result) {
+			expect(err).to.be.not.ok;
 			expect(result.data.length).to.equal(10);
 			done();
 		});
