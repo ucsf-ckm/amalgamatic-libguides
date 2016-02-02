@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/ucsf-ckm/amalgamatic-libguides.git"
   },
-  "version": "4.1.9",
+  "version": "4.1.10",
   "dependencies": {
     "cheerio": "^0.17.0",
     "phantom": "^0.8.4",
